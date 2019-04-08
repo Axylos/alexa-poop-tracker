@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: "pooper_db"
+  user: postgres
+  host: 192.168.1.176
+
+development:
+  <<: *default
+  database: "pooper_development_db"
+  user: postgres
+  host: localhost
+
+production:
+  <<: *default
+
+test:
+  <<: *default
+  user: postgres
+  host: localhost
+  database: pooper_test_db
